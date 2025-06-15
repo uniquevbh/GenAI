@@ -77,9 +77,10 @@
             font-size: 1.3rem;
             font-weight: bold;
             background: linear-gradient(to right, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         nav {
             flex-grow: 1;
@@ -444,123 +445,6 @@
             font-size: 1.2rem;
             cursor: pointer;
         }
-
-        /* Stats Card Styles */
-        .stats-container {
-            max-width: 100%;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        h1.stats-title {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background-color: transparent;
-            perspective: 1000px;
-            height: 200px;
-            cursor: pointer;
-        }
-
-        .stat-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .stat-card.active .stat-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .stat-card-front,
-        .stat-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: var(--box-shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .stat-card-front {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-        }
-
-        .stat-card-back {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            transform: rotateY(180deg);
-            color: white;
-        }
-
-        .stat-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stat-card-front .stat-icon {
-            color: var(--primary);
-        }
-
-        .stat-card-back .stat-icon {
-            color: white;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-details {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            margin-top: 0.5rem;
-        }
-
-        .stat-card-back .stat-details {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .stat-list {
-            text-align: left;
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .stat-list li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .stat-card-back .stat-list li {
-            color: rgba(255, 255, 255, 0.9);
-        }
     </style>
 </head>
 
@@ -568,7 +452,7 @@
     <aside>
         <div class="logo">
             <i class="fas fa-robot"></i>
-            <span>Code Mentor AI</span>
+            <span>Coder Army</span>
         </div>
         <nav>
             <ul>
@@ -592,81 +476,22 @@
             </div>
         </header>
 
-        <div class="stats-container">
-            <h1 class="stats-title"><i class="fas fa-chart-line"></i> Your Coding Statistics</h1>
-
-            <div class="stats-grid">
-                <!-- Questions Solved Card -->
-                <div class="stat-card" onclick="toggleStatCard(this)">
-                    <div class="stat-card-inner">
-                        <div class="stat-card-front">
-                            <i class="fas fa-check-circle stat-icon"></i>
-                            <div class="stat-value">1,248</div>
-                            <div class="stat-title">Questions Solved</div>
-                            <div class="stat-details">Consistent improvement</div>
-                        </div>
-                        <div class="stat-card-back">
-                            <i class="fas fa-check-circle stat-icon"></i>
-                            <div class="stat-value">1,248</div>
-                            <div class="stat-title">Questions Solved</div>
-                            <div class="stat-details">Your problem-solving journey</div>
-                            <ul class="stat-list">
-                                <li>Last 30 days: 142 solved</li>
-                                <li>JavaScript: 420 solved</li>
-                                <li>Python: 380 solved</li>
-                                <li>Success rate: 92%</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages Card -->
-                <div class="stat-card" onclick="toggleStatCard(this)">
-                    <div class="stat-card-inner">
-                        <div class="stat-card-front">
-                            <i class="fas fa-language stat-icon"></i>
-                            <div class="stat-value">24</div>
-                            <div class="stat-title">Languages</div>
-                            <div class="stat-details">Diverse skillset</div>
-                        </div>
-                        <div class="stat-card-back">
-                            <i class="fas fa-language stat-icon"></i>
-                            <div class="stat-value">24</div>
-                            <div class="stat-title">Languages Mastered</div>
-                            <div class="stat-details">Your technical versatility</div>
-                            <ul class="stat-list">
-                                <li>Expert: JavaScript, Python</li>
-                                <li>Advanced: Java, C++, Ruby</li>
-                                <li>Intermediate: Go, Rust, Swift</li>
-                                <li>Learning: Kotlin, Dart</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tips Card -->
-                <div class="stat-card" onclick="toggleStatCard(this)">
-                    <div class="stat-card-inner">
-                        <div class="stat-card-front">
-                            <i class="fas fa-lightbulb stat-icon"></i>
-                            <div class="stat-value">Pro</div>
-                            <div class="stat-title">Coding Tips</div>
-                            <div class="stat-details">Expert recommendations</div>
-                        </div>
-                        <div class="stat-card-back">
-                            <i class="fas fa-lightbulb stat-icon"></i>
-                            <div class="stat-value">Pro Tips</div>
-                            <div class="stat-title">For Better Code</div>
-                            <div class="stat-details">Personalized for you</div>
-                            <ul class="stat-list">
-                                <li>Use descriptive variable names</li>
-                                <li>Comment complex logic</li>
-                                <li>Practice daily algorithms</li>
-                                <li>Review old solutions</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid">
+            <div class="card">
+                <h2><i class="fas fa-code-branch" style="color: var(--primary);"></i> 1,248 Questions Solved</h2>
+                <p>You've improved your coding skills consistently.</p>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-language" style="color: var(--secondary);"></i> 24 Languages</h2>
+                <p>You've explored a wide range of technologies.</p>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-lightbulb" style="color: var(--accent);"></i> Tips</h2>
+                <ul style="line-height: 1.7; padding-left: 1.2rem;">
+                    <li>Use descriptive variable names</li>
+                    <li>Comment your logic clearly</li>
+                    <li>Practice daily to retain concepts</li>
+                </ul>
             </div>
         </div>
 
@@ -884,9 +709,6 @@
                 } else if (errorMessage.includes("quota")) {
                     errorMessage += "<br><br>You may have exceeded your API quota.";
                 }
-                } else if (errorMessage.includes("quota")) {
-                    errorMessage += "<br><br>You may have exceeded your API quota.";
-                }
 
                 responseText.innerHTML = `<p class='error-message'>${errorMessage}</p>`;
             }
@@ -926,18 +748,6 @@
             } else {
                 alert('Web Share API is not supported in your browser.');
             }
-        }
-
-        function toggleStatCard(card) {
-            // Close any other open cards first
-            document.querySelectorAll('.stat-card').forEach(c => {
-                if (c !== card && c.classList.contains('active')) {
-                    c.classList.remove('active');
-                }
-            });
-
-            // Toggle the clicked card
-            card.classList.toggle('active');
         }
     </script>
 </body>
